@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            text-align: center;
+        }
+        .message h1 {
+            font-size: 4rem;
+            animation: colorChange 3s infinite;
+        }
+        .message p {
+            font-size: 2rem;
+            color: #ff6347;
+        }
+        @keyframes colorChange {
+            0% { color: #ff4500; }
+            25% { color: #ff6347; }
+            50% { color: #ffd700; }
+            75% { color: #32cd32; }
+            100% { color: #1e90ff; }
+        }
+        button {
+            font-size: 1.5rem;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>I LOVE YOU</h1>
+        <p>Do You Love ME</p>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+    </div>
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const messageDiv = document.querySelector('.message');
+
+        yesButton.addEventListener('click', () => {
+            messageDiv.innerHTML = '<h1>Thanks My Dear</h1>';
+        });
+
+        noButton.addEventListener('mousemove', (event) => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
